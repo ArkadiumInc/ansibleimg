@@ -3,6 +3,9 @@ FROM python:3
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
+RUN apt update; \
+    apt install curl
+RUN curl -sL https://aka.ms/InstallAzureCLIDeb |  bash
 
 RUN pip3 install --upgrade pip; \
     pip3 install --upgrade virtualenv; \
